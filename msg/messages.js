@@ -98,10 +98,10 @@ Blockly.Msg.EVENT_BROADCAST = 'broadcast %1';
 Blockly.Msg.EVENT_BROADCASTANDWAIT = 'broadcast %1 and wait';
 Blockly.Msg.EVENT_WHENKEYPRESSED = 'when %1 key pressed';
 Blockly.Msg.EVENT_WHENKEYPRESSED_SPACE = 'space';
-Blockly.Msg.EVENT_WHENKEYPRESSED_LEFT = 'left arrow';
-Blockly.Msg.EVENT_WHENKEYPRESSED_RIGHT = 'right arrow';
-Blockly.Msg.EVENT_WHENKEYPRESSED_DOWN = 'down arrow';
-Blockly.Msg.EVENT_WHENKEYPRESSED_UP = 'up arrow';
+Blockly.Msg.EVENT_WHENKEYPRESSED_LEFT = '⬅️';
+Blockly.Msg.EVENT_WHENKEYPRESSED_RIGHT = '➡️';
+Blockly.Msg.EVENT_WHENKEYPRESSED_DOWN = '⬇️';
+Blockly.Msg.EVENT_WHENKEYPRESSED_UP = '⬆️';
 Blockly.Msg.EVENT_WHENKEYPRESSED_ANY = 'any';
 
 // JSON blocks
@@ -212,13 +212,13 @@ Blockly.Msg.MOTION_ALIGNSCENE_TOPLEFT = 'top-left';
 Blockly.Msg.MOTION_ALIGNSCENE_TOPRIGHT = 'top-right';
 Blockly.Msg.MOTION_XSCROLL = 'x scroll';
 Blockly.Msg.MOTION_YSCROLL = 'y scroll';
-Blockly.Msg.MOTION_STAGE_SELECTED = 'Stage selected: no motion blocks';
+Blockly.Msg.MOTION_STAGE_SELECTED = 'Choose a sprite to access';
 
 // Operators blocks
 Blockly.Msg.OPERATORS_ADD = '%1 + %2';
 Blockly.Msg.OPERATORS_SUBTRACT = '%1 - %2';
 Blockly.Msg.OPERATORS_MULTIPLY = '%1 * %2';
-Blockly.Msg.OPERATORS_DIVIDE = '%1 / %2';
+Blockly.Msg.OPERATORS_DIVIDE = '%1 : %2';
 Blockly.Msg.OPERATORS_RANDOM = 'pick random %1 to %2';
 Blockly.Msg.OPERATORS_GT = '%1 > %2';
 Blockly.Msg.OPERATORS_LT = '%1 < %2';
@@ -277,8 +277,8 @@ Blockly.Msg.PROCEDURES_DEFINITION = 'define %1';
 // TW Procedures blocks
 Blockly.Msg.PROCEDURES_RETURN = 'return %1';
 Blockly.Msg.PROCEDURES_TO_REPORTER = 'Change To Reporter';
-Blockly.Msg.PROCEDURES_TO_STATEMENT = 'Change To Stacked Block';
-Blockly.Msg.PROCEDURES_DOCS = 'How to use return';
+Blockly.Msg.PROCEDURES_TO_STATEMENT = 'Change To Normal Block';
+Blockly.Msg.PROCEDURES_DOCS = 'How to use Return block';
 
 // Sensing blocks
 Blockly.Msg.SENSING_TOUCHINGOBJECT = 'touching %1?';
@@ -355,13 +355,13 @@ Blockly.Msg.CATEGORY_SENSING = 'Sensing';
 Blockly.Msg.CATEGORY_OPERATORS = 'Operators';
 Blockly.Msg.CATEGORY_VARIABLES = 'Variables';
 Blockly.Msg.CATEGORY_JSON = 'JSON';
-Blockly.Msg.CATEGORY_MYBLOCKS = 'My Blocks';
+Blockly.Msg.CATEGORY_MYBLOCKS = 'Functions';
 
 // Context menus
 Blockly.Msg.DUPLICATE = 'Duplicate';
-Blockly.Msg.DELETE = 'Delete';
+Blockly.Msg.DELETE = 'Delete this Block';
 Blockly.Msg.ADD_COMMENT = 'Add Comment';
-Blockly.Msg.REMOVE_COMMENT = 'Remove Comment';
+Blockly.Msg.REMOVE_COMMENT = 'Delete Comment';
 Blockly.Msg.DELETE_BLOCK = 'Delete Block';
 Blockly.Msg.DELETE_X_BLOCKS = 'Delete %1 Blocks';
 Blockly.Msg.DELETE_ALL_BLOCKS = 'Delete all %1 blocks?';
@@ -374,7 +374,7 @@ Blockly.Msg.SHOW_PROCEDURE_DEFINITION = 'Go to definition';
 Blockly.Msg.WORKSPACE_COMMENT_DEFAULT_TEXT = 'Say something...';
 
 // Color
-Blockly.Msg.COLOUR_HUE_LABEL = 'Color';
+Blockly.Msg.COLOUR_HUE_LABEL = 'Hue';
 Blockly.Msg.COLOUR_SATURATION_LABEL = 'Saturation';
 Blockly.Msg.COLOUR_BRIGHTNESS_LABEL = 'Brightness';
 
@@ -384,37 +384,37 @@ Blockly.Msg.CHANGE_VALUE_TITLE = 'Change value:';
 Blockly.Msg.RENAME_VARIABLE = 'Rename variable';
 Blockly.Msg.RENAME_VARIABLE_TITLE = 'Rename all "%1" variables to:';
 Blockly.Msg.RENAME_VARIABLE_MODAL_TITLE = 'Rename Variable';
-Blockly.Msg.NEW_VARIABLE = 'Make a Variable';
-Blockly.Msg.NEW_VARIABLE_TITLE = 'New variable name:';
-Blockly.Msg.VARIABLE_MODAL_TITLE = 'New Variable';
+Blockly.Msg.NEW_VARIABLE = 'Create a Variable';
+Blockly.Msg.NEW_VARIABLE_TITLE = 'Name your Variable:';
+Blockly.Msg.VARIABLE_MODAL_TITLE = 'Variable2';
 Blockly.Msg.VARIABLE_ALREADY_EXISTS = 'A variable named "%1" already exists.';
 Blockly.Msg.VARIABLE_ALREADY_EXISTS_FOR_ANOTHER_TYPE = 'A variable named "%1" already exists for another variable of type "%2".';
 Blockly.Msg.DELETE_VARIABLE_CONFIRMATION = 'Delete %1 uses of the "%2" variable?';
-Blockly.Msg.CANNOT_DELETE_VARIABLE_PROCEDURE = 'Can\'t delete the variable "%1" because it\'s part of the definition of the function "%2"';
+Blockly.Msg.CANNOT_DELETE_VARIABLE_PROCEDURE = 'Cannot delete the variable "%1" because it\'s part of the definition of the function "%2"';
 Blockly.Msg.DELETE_VARIABLE = 'Delete the "%1" variable';
 
 // Custom Procedures
 // @todo Remove these once fully managed by Scratch VM / Scratch GUI
-Blockly.Msg.NEW_PROCEDURE = 'Make a Block';
+Blockly.Msg.NEW_PROCEDURE = 'Create a Block';
 Blockly.Msg.PROCEDURE_ALREADY_EXISTS = 'A procedure named "%1" already exists.';
 Blockly.Msg.PROCEDURE_DEFAULT_NAME = 'block name';
 Blockly.Msg.PROCEDURE_USED = 'To delete a block definition, first remove all uses of the block';
 
 // Lists
 // @todo Remove these once fully managed by Scratch VM / Scratch GUI
-Blockly.Msg.NEW_LIST = 'Make a List';
-Blockly.Msg.NEW_LIST_TITLE = 'New list name:';
+Blockly.Msg.NEW_LIST = 'Create a List';
+Blockly.Msg.NEW_LIST_TITLE = 'Name your List:';
 Blockly.Msg.LIST_MODAL_TITLE = 'New List';
 Blockly.Msg.LIST_ALREADY_EXISTS = 'A list named "%1" already exists.';
 Blockly.Msg.RENAME_LIST_TITLE = 'Rename all "%1" lists to:';
 Blockly.Msg.RENAME_LIST_MODAL_TITLE = 'Rename List';
-Blockly.Msg.DEFAULT_LIST_ITEM = 'thing';
+Blockly.Msg.DEFAULT_LIST_ITEM = 'Scratchy';
 Blockly.Msg.DELETE_LIST = 'Delete the "%1" list';
 Blockly.Msg.RENAME_LIST = 'Rename list';
 
 // Broadcast Messages
 // @todo Remove these once fully managed by Scratch VM / Scratch GUI
-Blockly.Msg.NEW_BROADCAST_MESSAGE = 'New message';
-Blockly.Msg.NEW_BROADCAST_MESSAGE_TITLE = 'New message name:';
+Blockly.Msg.NEW_BROADCAST_MESSAGE = 'Create new message';
+Blockly.Msg.NEW_BROADCAST_MESSAGE_TITLE = 'Name your Message';
 Blockly.Msg.BROADCAST_MODAL_TITLE = 'New Message';
-Blockly.Msg.DEFAULT_BROADCAST_MESSAGE_NAME = 'message1';
+Blockly.Msg.DEFAULT_BROADCAST_MESSAGE_NAME = 'project started';
