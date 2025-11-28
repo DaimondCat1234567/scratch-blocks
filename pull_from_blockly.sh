@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Pull from Blockly into Scratch Blocks and do basic cleanup.
+# Pull from Blockly into KM (scratch) Blocks and do basic cleanup.
 # Rachel Fenichel (fenichel@google.com)
 
 BOLD='\e[1m'
@@ -19,7 +19,7 @@ stop_on_fail() {
   set -o pipefail
 }
 
-# Undo the effects of start_failing.
+# Undo the effects of stop_on_fail.
 continue_on_fail() {
   set +e
   set +o pipefail
@@ -60,11 +60,11 @@ pull_from_develop_fn() {
   prompt "Do you want to pull from develop?" true
   if [ $prompt_result = false ]
     then
-      bold_echo "You don't want to pull from develop.  Why are you running this script?"
+      bold_echo "This script is used to pull from develop. Only run if you want to pull"
       exit
   fi
 
-  bold_echo "Pulling from Blockly's develop branch"
+  bold_echo "Pulling from Blockly's develop branch. Please wait..."
   sleep .5
   # This pull will likely fail with merge conflicts, but that's okay.
   # However, this means that we won't fail on errors other than merge conflicts.
@@ -77,7 +77,7 @@ pull_from_develop_fn() {
 # The default is to run cleanup.
 run_cleanup_fn() {
   empty_lines
-  prompt "Ready to run cleanup.sh.  Continue?" true
+  prompt "Ready to run cleanup.sh.  Run it?" true
   if [ $prompt_result = false ]
     then
       bold_echo "Skipping cleanup.sh"
@@ -101,9 +101,9 @@ prompt_for_merge_abort() {
   prompt "Do you want to abort this merge?" false
   if [ $prompt_result = false ]
     then
-      bold_echo "Continuing with merge..."
+      bold_echo "Continuing with the merge..."
   else
-    bold_echo "Running git merge --abort"
+    bold_echo "Running git merge --abort (aborting)"
     git merge --abort
     display_status_fn
     bold_echo "Done"
@@ -115,15 +115,15 @@ prompt_for_merge_abort() {
 # The default to to show status.
 display_status_fn() {
   empty_lines
-  prompt "Do you want to display the current status?" true
+  prompt "Do you want to display the status?" true
   if [ $prompt_result = true ]
     then
       # Tell the user the current state.
-      bold_echo "Current status"
+      bold_echo "Loading status"
       sleep .5
       git status
   else
-    bold_echo "Skipping status display."
+    bold_echo "Status skipped"
   fi
 }
 
@@ -131,10 +131,11 @@ display_status_fn() {
 # next steps should be.
 finish_fn() {
   prompt_for_merge_abort
-  bold_echo "Done.  You may need to manually resolve conflicts."
+  bold_echo "Done! You may need to manually resolve conflicts."
   # Helpful tips about what to do next.
   empty_lines
   sleep .5
+  echo "Here are some tips for what to do next:"
   echo "Fix conflicts and run 'git commit'."
   echo "Use 'git add <file>' to mark resolution."
   echo "Use 'git merge --abort' to abort this merge."
