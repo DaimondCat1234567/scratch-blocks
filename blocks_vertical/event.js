@@ -330,7 +330,7 @@ Blockly.Blocks['event_whenkeypressed'] = {
           "options": [
             [Blockly.Msg.EVENT_WHENKEYPRESSED_SPACE, 'spacebar'],
             [Blockly.Msg.EVENT_WHENKEYPRESSED_UP, '⬆️'],
-            [Blockly.Msg.EVENT_WHENKEYPRESSED_DOWN, 'd⬇️'],
+            [Blockly.Msg.EVENT_WHENKEYPRESSED_DOWN, '⬇️'],
             [Blockly.Msg.EVENT_WHENKEYPRESSED_RIGHT, '➡️'],
             [Blockly.Msg.EVENT_WHENKEYPRESSED_LEFT, '⬅️'],
             [Blockly.Msg.EVENT_WHENKEYPRESSED_ANY, 'any'],
@@ -370,7 +370,7 @@ Blockly.Blocks['event_whenkeypressed'] = {
             ['7', '7'],
             ['8', '8'],
             ['9', '9'],
-            ['>','>']
+            ['>','>'],
             ['<','<']
           ]
         }
